@@ -11,15 +11,14 @@
 */
 
 
-
-
-
 @keyframes heart-scale {
   from {
     transform: scale(1);
   }
+
   to {
-    transform: scale(1.25); /* 1.25 вместо 1.5 */
+    transform: scale(1.25);
+    /* 1.25 вместо 1.5 */
   }
 }
 
@@ -27,11 +26,8 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
-
-
-
-

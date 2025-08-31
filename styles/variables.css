@@ -1,34 +1,33 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-  
+
   --font-main: 'Inter', Arial, sans-serif;
   --font-accent: 'PressStart2P', 'Courier New', monospace;
 
+  /* Заголовок */
+  --font-weight-title: 715;
+  /* Текст*/
+  --font-weight-text: 410;
 
-  --font-weight-title: 715;   /* Заголовок */
-  --font-weight-text: 410;    /* Текст*/
-  
 
-  --bg-color:rgba(255, 255, 255, 1);
 
-  --like-fill-color: rgba(255, 0, 0, 1);   /* Красный для лайка */
-  
-  --border-color:rgba(0, 0, 0, 1);
+  --bg-color: rgba(255, 255, 255, 1);
 
-  --text-color:rgba(0, 0, 0, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  /* Красный для лайка */
+  --like-fill-color: rgba(255, 0, 0, 1);
+
+  --border-color: rgba(0, 0, 0, 1);
+
+  --text-color: rgba(0, 0, 0, 1);
 
   --heart-contour: rgba(0, 0, 0, 1);
 
-  --heart-hover:rgba(0, 0, 0, 1);
+  --heart-hover: rgba(0, 0, 0, 1);
 
-  --color-bg:rgba(0, 0, 0, 1);
+  --color-bg: rgba(0, 0, 0, 1);
 
-  --white-color:rgba(255, 255, 255, 1);
-
-
-
-  --shadow-title: 1px rgb(255 255 255 / 0.5);
 
 
 }
