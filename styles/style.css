@@ -114,8 +114,8 @@ main {
   border: 2px solid var(--border-color);
 }
 
-.hue-rotate {
-  filter: hue-rotate(0.5turn);
+.multiple-filter {
+  filter: hue-rotate(0.5turn) brightness(80%) sepia(40%);
 }
 
 .invert {
@@ -131,7 +131,7 @@ main {
 }
 
 .grayscale {
-  filter: grayscale(80%);
+  filter: grayscale(100%);
 }
 
 .opacity {
@@ -164,6 +164,7 @@ main {
   z-index: 1;
   -webkit-text-stroke: 1px rgb(255 255 255 / 0.5);
   text-stroke: 1px rgba(255, 255, 255, 0.5);
+  mix-blend-mode: hard-light;
 }
 
 @supports not ((-webkit-text-stroke: 1px black) or (text-stroke: 1px black)) {
@@ -310,10 +311,69 @@ main {
   transition-duration: 0.3s;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* Тень при фокусе */
 .button:focus {
   box-shadow: 2px 2px 0px 0px var(--border-color, #000);
 }
+
+/* общий класс для всех button */
+.button {
+  position: relative;
+  font-family: var(--font-accent);
+  border: 2px solid var(--border-color, #000);
+  background-color: var(--bg-color, #FFF);
+  font-size: 14px;
+  line-height: 90%;
+  z-index: 1;
+  color: var(--text-color, #000);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.save-button {
+  inline-size: clamp(306px, 50vw, 335px);
+  block-size: 55px;
+  gap: 8px;
+  margin: 50px auto 100px;
+}
+
+.dialog__button {
+  inline-size: 293px;
+  block-size: 38px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Псевдоэлемент для анимации фона */
 .button::before {
@@ -335,7 +395,9 @@ main {
   transform: scaleX(1);
 }
 
-.card__like-button {
+
+
+/* .card__like-button {
   cursor: pointer;
   position: relative;
   font-family: var(--font-accent);
@@ -349,16 +411,29 @@ main {
   background-color: var(--white-color);
   outline: none;
   transition: box-shadow 0.3s ease;
-}
+} */
 
 /* Стили для текста с mix-blend-mode */
 .button__text {
   position: relative;
   z-index: 2;
   mix-blend-mode: difference;
+
+  /* добавлено */
+  color: var(--white-color)
 }
 
-.save-button {
+
+
+
+
+
+
+
+
+
+
+/* .save-button {
   position: relative;
   font-family: var(--font-accent);
   inline-size: clamp(306px, 50vw, 335px);
@@ -377,15 +452,35 @@ main {
   justify-content: center;
   gap: 8px;
   margin: 50px auto 100px;
-}
+} */
 
-.save-button:hover::before {
+
+
+
+/* .save-button:hover::before {
   transform: scaleX(1);
-}
+} */
 
+/* .button:hover::before {
+  transform: scaleX(1);
+} */
+
+
+
+
+
+
+/* 
 .save-button:focus {
   box-shadow: 2px 2px 0px 0px var(--border-color, #000);
-}
+} */
+
+/* .button:focus {
+  box-shadow: 2px 2px 0px 0px var(--border-color, #000);
+} */
+
+
+
 
 .save-button .button__text {
   position: relative;
@@ -394,15 +489,38 @@ main {
   color: var(--white-color);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .save-icon {
-  width: clamp(28px, 4vw, 21px);
-  height: clamp(28px, 4vw, 21px);
+  width: 21px;
+  height: 21px;
   flex-shrink: 0;
   /* Плавное изменение цвета */
   transition: color 0.3s ease;
+  mix-blend-mode: difference;
+  color: var(--white-color);
+
+
+  /* border: 1px solid red; */
 }
 
 .save-button:hover .save-icon {
+
   color: var(--white-color);
 }
 
@@ -424,7 +542,17 @@ main {
   line-height: 150%;
 }
 
-.dialog__button {
+.dialog__text{
+  max-width: 200px;
+}
+
+
+
+
+
+
+
+/* .dialog__button {
   position: relative;
   font-family: var(--font-accent);
   inline-size: 293px;
@@ -441,15 +569,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.dialog__button:hover::before {
+/* .dialog__button:hover::before {
   transform: scaleX(1);
 }
 
 .dialog__button:focus {
   box-shadow: 2px 2px 0px 0px var(--border-color, #000);
-}
+} */
 
 .dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
@@ -457,9 +585,6 @@ main {
 
 /* Медиазапрос для точной настройки под 375px */
 @media (width <=375px) {
-  body {
-    overflow-x: hidden;
-  }
 
   .page {
     min-block-size: auto;
@@ -472,6 +597,14 @@ main {
   .header__container {
     width: 100%;
   }
+  .dialog__button{
+    inline-size: 261px;
+  }
+
+  .save-icon {
+    width: 28px;
+    height: 28px;
+  }
 
   .card__img {
     max-height: 371px;
@@ -483,3 +616,5 @@ main {
   }
 
 }
+
+
