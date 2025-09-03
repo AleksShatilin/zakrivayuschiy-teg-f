@@ -311,17 +311,6 @@ main {
   transition-duration: 0.3s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* Тень при фокусе */
 .button:focus {
   box-shadow: 2px 2px 0px 0px var(--border-color, #000);
@@ -345,7 +334,6 @@ main {
   justify-content: center;
 }
 
-
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
@@ -362,18 +350,6 @@ main {
   inline-size: 293px;
   block-size: 38px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Псевдоэлемент для анимации фона */
 .button::before {
@@ -395,132 +371,30 @@ main {
   transform: scaleX(1);
 }
 
-
-
-/* .card__like-button {
-  cursor: pointer;
-  position: relative;
-  font-family: var(--font-accent);
-  inline-size: 130px;
-  block-size: 38px;
-  border: 2px solid var(--border-color);
-  font-size: 14px;
-  line-height: 90%;
-  z-index: 1;
-  color: var(--white-color);
-  background-color: var(--white-color);
-  outline: none;
-  transition: box-shadow 0.3s ease;
-} */
-
 /* Стили для текста с mix-blend-mode */
 .button__text {
   position: relative;
   z-index: 2;
   mix-blend-mode: difference;
-
-  /* добавлено */
   color: var(--white-color)
 }
 
-
-
-
-
-
-
-
-
-
-
-/* .save-button {
-  position: relative;
-  font-family: var(--font-accent);
-  inline-size: clamp(306px, 50vw, 335px);
-  block-size: 55px;
-  border: 2px solid var(--border-color, #000);
-  background-color: var(--bg-color, #FFF);
-  font-size: 14px;
-  line-height: 90%;
-  z-index: 1;
-  color: var(--text-color, #000);
-  outline: none;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 50px auto 100px;
-} */
-
-
-
-
-/* .save-button:hover::before {
-  transform: scaleX(1);
-} */
-
-/* .button:hover::before {
-  transform: scaleX(1);
-} */
-
-
-
-
-
-
-/* 
-.save-button:focus {
-  box-shadow: 2px 2px 0px 0px var(--border-color, #000);
-} */
-
-/* .button:focus {
-  box-shadow: 2px 2px 0px 0px var(--border-color, #000);
-} */
-
-
-
-
-.save-button .button__text {
+.save-icon,
+.button__text {
   position: relative;
   z-index: 2;
   mix-blend-mode: difference;
   color: var(--white-color);
+  fill: currentColor;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .save-icon {
   width: 21px;
   height: 21px;
   flex-shrink: 0;
-  /* Плавное изменение цвета */
-  transition: color 0.3s ease;
-  mix-blend-mode: difference;
-  color: var(--white-color);
-
-
-  /* border: 1px solid red; */
 }
 
 .save-button:hover .save-icon {
-
   color: var(--white-color);
 }
 
@@ -542,42 +416,9 @@ main {
   line-height: 150%;
 }
 
-.dialog__text{
+.dialog__text {
   max-width: 200px;
 }
-
-
-
-
-
-
-
-/* .dialog__button {
-  position: relative;
-  font-family: var(--font-accent);
-  inline-size: 293px;
-  block-size: 38px;
-  border: 2px solid var(--border-color, #000);
-  background-color: var(--bg-color, #FFF);
-  font-size: 14px;
-  line-height: 90%;
-  z-index: 1;
-  color: var(--white-color);
-  outline: none;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .dialog__button:hover::before {
-  transform: scaleX(1);
-}
-
-.dialog__button:focus {
-  box-shadow: 2px 2px 0px 0px var(--border-color, #000);
-} */
 
 .dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
@@ -597,7 +438,8 @@ main {
   .header__container {
     width: 100%;
   }
-  .dialog__button{
+
+  .dialog__button {
     inline-size: 261px;
   }
 
@@ -616,5 +458,3 @@ main {
   }
 
 }
-
-
